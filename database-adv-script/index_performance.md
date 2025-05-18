@@ -9,11 +9,11 @@
 - `email` - login lookups
 - `role` - filtering hosts/guests
 
-```sql
+
 -- Users table indexes
 CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_users_role ON users(role);
-```
+
 
 #### Proprties Table
 
