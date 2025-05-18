@@ -86,3 +86,18 @@ LEFT JOIN
 ORDER BY 
     bc.start_date DESC
 LIMIT 1000;
+
+
+
+-- Example: Find available properties in Paris
+EXPLAIN ANALYZE
+SELECT * FROM properties
+WHERE location->>'city' = 'Paris'
+AND is_available = TRUE
+ORDER BY price_per_night;
+
+
+-- Regularly analyze tables for query planner statistics
+ANALYZE users;
+ANALYZE properties;
+ANALYZE bookings;
