@@ -15,8 +15,8 @@ SELECT
 	property_id,
 	title,
 	COUNT(*) AS total_bookings,
-	ROW NUMBER() OVER (ORDER BY COUNT(*) DESC) AS property_number,
-	RANK () OVER(ORDER BY COUNT(*) DESC) AD property_rank
+	ROW NUMBER() OVER (ORDER BY COUNT(*) DESC) AS row_number_rank,
+	RANK () OVER(ORDER BY COUNT(*) DESC) AS property_rank
 FROM bookings
 GROUP BY property_id
 ORDER BY total_bookings DESC;
